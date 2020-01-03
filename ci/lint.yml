@@ -1,0 +1,6 @@
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.6'
+- script: make setup && ( make lint || exit 0 )
+  displayName: Running pre-commit on all files
