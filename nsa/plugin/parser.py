@@ -12,7 +12,7 @@ from nsa.settings import Settings
 class LineRegexRule(NamedTuple):
     title: str
     pattern: str
-    platforms: list
+    platforms: list = []
     link: str = ""
     ticket: str = ""
     reason: str = ""
@@ -62,7 +62,7 @@ class LineRegexParser(base.ParserBase):
 
     def search(self, line, platform):
         for rule in self.rules:
-            if platform not in self.platforms:
+            if platform not in rule.platforms:
                 continue
             match = re.search(rule.pattern, line)
             if self._match(rule.operator, match):

@@ -24,7 +24,7 @@ VIOLATION_SCHEMA = Schema(
                 list, lambda l: all(isinstance(i, str) for i in l)
             ),
             "wiki": str,
-            Optional("cve"): And(str, Use(str.upper), len),
+            Optional("cve"): And(str, Use(str.upper)),
             Optional("score"): And(Or(int, float), lambda n: n > 0),
         }
     ]
