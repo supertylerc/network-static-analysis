@@ -49,4 +49,10 @@ class Settings(metaclass=Singleton):
             "nxos": [r"Cisco Nexus Operating System \(NX-OS\) Software",],
             "iosxe": [r"IOS-XE Software",],
             "iosxr": [r"RP0/CPU0",],
+            "junos": [
+                r"JUNOS",
+                # TC: Not 100% sure if this pattern is in other platforms
+                #     It'll do for now until a bug is opened
+                r"## Last commit: \d{4}-\d{2}-\d{2}.*by \w",
+            ],
         }
