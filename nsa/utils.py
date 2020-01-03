@@ -31,6 +31,6 @@ def _detect_platform(line, pattern_type):
     )
     for platform, patterns in platform_patterns.items():
         for pattern in patterns:
-            if re.search(pattern, line):
+            if re.search(pattern, line, flags=re.IGNORECASE):
                 return platform
     return None
