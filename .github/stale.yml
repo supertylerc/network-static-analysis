@@ -1,0 +1,22 @@
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 30
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 7
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+# Label to use when marking an issue as stale
+staleLabel: wontfix
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  Hello!  This issue has not had any activity in the last 30 days.  In order
+  to prioritize issues and maintain a high level of quality, issues without any
+  recent activity are marked `stale` after 30 days.  This issue will be
+  automatically closed if there is no activity in the next 7 days.  Thank you
+  for your contributions!
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: >
+  Thank you for opening an issue.  This issue has been marked stale for 7 days
+  and is now being closed due to lack of activity.  If you think this issue has
+  been closed erroneously, please re-open it to renew the discussion.
