@@ -12,83 +12,83 @@ pr:
     - '*'
 
 stages:
-- stage: Build
-  jobs:
-  # QA
-  - job: lint
-    pool:
-      vmImage: 'ubuntu-18.04'
-    steps:
-    - template: ci/lint.yml
-
-  # Build
-  # Linux
-  - job: test_linux
-    dependsOn: lint
-    pool:
-      vmImage: 'ubuntu-18.04'
-    strategy:
-      matrix:
-        Python36:
-          python.version: '3.6'
-        Python37:
-          python.version: '3.7'
-        Python38:
-          python.version: '3.8'
-    steps:
-    - template: ci/install.yml
-
-  #MacOS
-  - job: test_macos
-    dependsOn: lint
-    pool:
-      vmImage: 'macOS-10.13'
-    strategy:
-      matrix:
-        Python36:
-          python.version: '3.6'
-        Python37:
-          python.version: '3.7'
-        Python38:
-          python.version: '3.8'
-    steps:
-    - template: ci/install.yml
-
-  #Windows
-  - job: test_windows
-    dependsOn: lint
-    pool:
-      vmImage: 'vs2017-win2016'
-    strategy:
-      matrix:
-        Python36:
-          python.version: '3.6'
-        Python37:
-          python.version: '3.7'
-        Python38:
-          python.version: '3.8'
-    steps:
-    - template: ci/install.yml
-
-- stage: Release
-  condition: contains(variables['Build.SourceBranch'], 'tags')
-  jobs:
-  - job: release
-    pool:
-      vmImage: 'ubuntu-18.04'
-    steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '3.8'
-      displayName: Select Python version
-    - template: ci/install.yml
-    - script: make publish
-      displayName: Release to pypi
-    - task: GitHubRelease@0
-      inputs:
-        gitHubConnection: github.com_supertylerc
-        repositoryName: supertylerc/network-static-analysis
-        tagSource: 'auto'
-        assets:
-          dist/*
-      displayName: Add release to GitHub
+  - stage: Build
+    jobs:
+    # QA
+    - job: lint
+      pool:
+        vmImage: 'ubuntu-18.04'
+      steps:
+      - template: ci/lint.yml
+  
+    # Build
+    # Linux
+    - job: test_linux
+      dependsOn: lint
+      pool:
+        vmImage: 'ubuntu-18.04'
+      strategy:
+        matrix:
+          Python36:
+            python.version: '3.6'
+          Python37:
+            python.version: '3.7'
+          Python38:
+            python.version: '3.8'
+      steps:
+      - template: ci/install.yml
+  
+    #MacOS
+    - job: test_macos
+      dependsOn: lint
+      pool:
+        vmImage: 'macOS-10.13'
+      strategy:
+        matrix:
+          Python36:
+            python.version: '3.6'
+          Python37:
+            python.version: '3.7'
+          Python38:
+            python.version: '3.8'
+      steps:
+      - template: ci/install.yml
+  
+    #Windows
+    - job: test_windows
+      dependsOn: lint
+      pool:
+        vmImage: 'vs2017-win2016'
+      strategy:
+        matrix:
+          Python36:
+            python.version: '3.6'
+          Python37:
+            python.version: '3.7'
+          Python38:
+            python.version: '3.8'
+      steps:
+      - template: ci/install.yml
+  
+  - stage: Release
+    condition: contains(variables['Build.SourceBranch'], 'tags')
+    jobs:
+    - job: release
+      pool:
+        vmImage: 'ubuntu-18.04'
+      steps:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.8'
+        displayName: Select Python version
+      - template: ci/install.yml
+      - script: make publish
+        displayName: Release to pypi
+      - task: GitHubRelease@0
+        inputs:
+          gitHubConnection: github.com_supertylerc
+          repositoryName: supertylerc/network-static-analysis
+          tagSource: 'auto'
+          assets:
+            dist/*
+        displayName: Add release to GitHub

@@ -3,6 +3,16 @@ steps:
     displayName: 'Use Python $(python.version)'
     inputs:
       versionSpec: '$(python.version)'
+  # Unix
+  - bash: |
+      echo "##vso[task.prependpath]$HOME/.local/bin"
+    condition: or(eq( variables['Agent.OS'], 'Linux' ), eq( variables['Agent.OS'], 'Darwin' ))
+    displayName: Add pipenv to path (Unix)
+  # Windows
+  - powershell: |
+      Write-Host "##vso[task.prependpath]${env:USERPROFILE}\.local\bin"
+    condition: eq( variables['Agent.OS'], 'Windows_NT' )
+    displayName: Add pipenv to path (Windows) 
   - script: |
       make install-dev
     displayName: Install Package Locally

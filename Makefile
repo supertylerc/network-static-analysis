@@ -17,6 +17,7 @@ install-dev:
 	pipenv sync
 	pipenv run pip install -e .
 release:
-	python3 -m pip install --user --upgrade setuptools wheel twine
+	python3 -m pip install --user pipenv
+	pipenv run python3 -m pip install --upgrade setuptools wheel twine
 	pipenv run python3 setup.py sdist bdist_wheel
-	python3 -m twine upload dist/*
+	#python3 -m twine upload dist/*

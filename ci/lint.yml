@@ -1,6 +1,16 @@
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.6'
-- script: make setup && ( make lint || exit 0 )
-  displayName: Running pre-commit on all files
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.6'
+  # Unix
+  - bash: |
+      echo "##vso[task.prependpath]$HOME/.local/bin"
+    condition: or(eq( variables['Agent.OS'], 'Linux' ), eq( variables['Agent.OS'], 'Darwin' ))
+    displayName: Add pipenv to path (Unix)
+  # Windows
+  - powershell: |
+      Write-Host "##vso[task.prependpath]${env:USERPROFILE}\.local\bin"
+    condition: eq( variables['Agent.OS'], 'Windows_NT' )
+    displayName: Add pipenv to path (Windows)
+  - script: make setup && ( make lint || exit 0 )
+    displayName: Running pre-commit on all files
