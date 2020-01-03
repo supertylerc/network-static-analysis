@@ -77,6 +77,14 @@ can run `nsa` with the following command:
 $ nsa scan
 ```
 
+And a picture is worth a thousan words, so here is a screenshot of the
+only check (currently) shipping:
+
+![network-static-analysis](example.png)
+
+> Configuration snippet borrowed from:
+> https://www.tacacs.org/tacacsplus/2011/10/27/cisco-nexus
+
 ## Customizing nsa
 
 `nsa` looks for its configuration file (`nsa.yml`) in the following
