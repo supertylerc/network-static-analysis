@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.github
+  | \.tox
+  | \.pyre_configuration
+  | \.venv
+  | _build
+  | build
+  | dist
+)
+'''
+
+[tool.isort]
+known_first_party = "nsa"
+known_third_party = ["colorama", "ruamel", "schema", "setuptools", "stevedore"]
+multi_line_output = 3
+lines_after_imports = 2
+force_grid_wrap = 0
+combine_as_imports = true
+include_trailing_comma = true
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+envlist = py36,py37,py38
+[testenv]
+whitelist_externals = pipenv
+commands =
+    pipenv install --dev
+    pipenv run pytest
+"""
+#[tool.towncrier]
+#package = "pipenv"
+#filename = "CHANGELOG.rst"
+#issue_format = "`#{issue} <https://github.com/pypa/pipenv/issues/{issue}>`_"
+#directory = "news/"
+#title_format = "{version} ({project_date})"
+#template = "news/towncrier_template.rst"
+#
+#  [[tool.towncrier.type]]
+#  directory = "feature"
+#  name = "Features & Improvements"
+#  showcontent = true
+#
+#  [[tool.towncrier.type]]
+#  directory = "behavior"
+#  name = "Behavior Changes"
+#  showcontent = true
+#
+#  [[tool.towncrier.type]]
+#  directory = "bugfix"
+#  name = "Bug Fixes"
+#  showcontent = true
+#
+#  [[tool.towncrier.type]]
+#  directory = "vendor"
+#  name = "Vendored Libraries"
+#  showcontent = true
+#
+#  [[tool.towncrier.type]]
+#  directory = "doc"
+#  name = "Improved Documentation"
+#  showcontent = true
+#
+#  [[tool.towncrier.type]]
+#  directory = "trivial"
+#  name = "Trivial Changes"
+#  showcontent = false
+#
+#  [[tool.towncrier.type]]
+#  directory = "removal"
+#  name = "Removals and Deprecations"
+#  showcontent = true

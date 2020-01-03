@@ -1,0 +1,10 @@
+---
+
+rules:
+  - title: Unencrypted/Cisco-7 TACACS+ Key
+    pattern: tacacs-server key 7
+    operator: in
+    platforms:
+      - nxos
+    score: 1.0
+    reason: The TACACS+ Key is not encrypted using the AES encyprtion feature in NX-OS.

@@ -1,0 +1,20 @@
+profiles:
+  default:
+    plugins:
+      input:
+        namespace: nsa.plugin.default
+        name: glob
+      parser:
+        namespace: nsa.plugin.default
+        name: lineregex
+      output:
+        namespace: nsa.plugin.default
+        name: text
+plugins:
+  input:
+    glob:
+      path: /etc/nsa-py/files.d/**/*
+  parser:
+    lineregex:
+      path: /etc/nsa-py/rules.d/**/*
+      context: 3

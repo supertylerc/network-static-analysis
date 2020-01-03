@@ -1,0 +1,2 @@
+include nsa nsa.yml
+recursive-include nsa/rules *.yml
