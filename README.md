@@ -1,4 +1,4 @@
-# network-security-analysis
+# network-static-analysis
 
 `nsa` is a static configuration analysis tool for ensuring network
 device configuration compliance.  The software is currently in an
