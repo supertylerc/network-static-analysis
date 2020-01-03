@@ -7,4 +7,4 @@ rules:
     platforms:
       - nxos
     score: 1.0
-    reason: The TACACS+ Key is not encrypted using the AES encyprtion feature in NX-OS.
+    reason: The TACACS+ Key is not encrypted using the AES encryption feature in NX-OS.
