@@ -1,5 +1,6 @@
 setup:
 	pip3 install --user pipenv
+	pipenv run python3 -m pip install --upgrade setuptools wheel
 	pipenv sync --dev
 update:
 	pipenv --rm
