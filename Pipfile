@@ -19,11 +19,5 @@ schema = "*"
 ruamel-yaml = "*"
 colorama = "*"
 
-[scripts]
-inventory = "ansible-inventory --graph ${LIMIT}"
-requirements = "ansible-galaxy install -r requirements.yml -p roles/"
-dry-run = "ansible-playbook --limit ${ANSIBLE_LIMIT} --diff --check tacacs.yml"
-deploy = "ansible-playbook --limit ${ANSIBLE_LIMIT} --diff tacacs.yml"
-
 [pipenv]
 allow_prereleases = true
