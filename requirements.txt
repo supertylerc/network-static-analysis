@@ -1,7 +1,8 @@
+
 colorama==0.4.3
 contextlib2==0.5.5
 pbr==5.4.4
-ruamel.yaml==0.16.5
+ruamel-yaml==0.16.5
 schema==0.7.1
 six==1.13.0
 stevedore==1.31.0
