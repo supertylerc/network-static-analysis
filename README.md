@@ -53,7 +53,13 @@ $ pip install -r requirements.txt
 $ pip install -e .
 ```
 
-Create a default configuration in your current directory:
+Create a default configuration in your current directory __WITH__ `pipenv`:
+
+```bash
+$ pipenv run nsa init
+```
+
+Create a default configuration in your current directory __WITHOUT__ `pipenv`:
 
 ```bash
 $ nsa init
@@ -73,9 +79,18 @@ the default path for rules files is `/etc/nsa-py/rules.d/**/*`.  Once
 you've updated those paths (or placed your files and rules there), you
 can run `nsa` with the following command:
 
+__WITH__ `pipenv`:
+
+```bash
+$ pipenv run nsa scan
+```
+
+__WITHOUT__ `pipenv`:
+
 ```bash
 $ nsa scan
 ```
+
 
 And a picture is worth a thousan words, so here is a screenshot of the
 only check (currently) shipping:
