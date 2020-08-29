@@ -280,11 +280,11 @@
         },
         "ipython": {
             "hashes": [
-                "sha256:ca478e52ae1f88da0102360e57e528b92f3ae4316aabac80a2cd7f7ab2efb48a",
-                "sha256:eb8d075de37f678424527b5ef6ea23f7b80240ca031c2dd6de5879d687a65333"
+                "sha256:4dbacf73ac7409c33c918044476eefe4c2428ce0ca4cc118aee718ac6026ac0f",
+                "sha256:73c61ebcc30baadf600b870c3a38b96d6e5ae8dde5ef5425b8aab75dc9a9a602"
             ],
             "index": "pypi",
-            "version": "==7.13.0"
+            "version": "==7.18.0"
         },
         "ipython-genutils": {
             "hashes": [
@@ -350,10 +350,10 @@
         },
         "more-itertools": {
             "hashes": [
-                "sha256:68c70cc7167bdf5c7c9d8f6954a7837089c6a36bf565383919bb595efb8a17e5",
-                "sha256:b78134b2063dd214000685165d81c154522c3ee0a1c0d4d113c80361c234c5a2"
+                "sha256:6f83822ae94818eae2612063a5101a7311e68ae8002005b5e05f03fd74a86a20",
+                "sha256:9b30f12df9393f0d28af9210ff8efe48d10c94f73e5daf886f10c4b0b0b4f03c"
             ],
-            "version": "==8.4.0"
+            "version": "==8.5.0"
         },
         "mypy-extensions": {
             "hashes": [
