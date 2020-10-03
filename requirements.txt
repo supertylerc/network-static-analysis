@@ -5,4 +5,4 @@ pbr==5.5.0
 ruamel-yaml==0.16.12
 ruamel.yaml.clib==0.2.2 ; platform_python_implementation == 'CPython' and python_version < '3.9'
 schema==0.7.1
-stevedore==3.2.1
+stevedore==3.2.2
