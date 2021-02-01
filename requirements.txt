@@ -1,8 +1,7 @@
 
 colorama==0.4.3
-contextlib2==0.5.5
-pbr==5.5.0
+contextlib2==0.6.0.post1
+pbr==5.5.1
 ruamel-yaml==0.16.12
-ruamel.yaml.clib==0.2.2 ; platform_python_implementation == 'CPython' and python_version < '3.9'
-schema==0.7.1
+schema==0.7.4
 stevedore==3.2.1
