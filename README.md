@@ -1,3 +1,12 @@
+# UNMAINTAINED
+
+This project is not maintained and hasn't been for quite a while.  I
+still think the idea is solid, and I think the implementation is pretty
+decent, too.  However, I don't have time to maintain it, so I'm
+archiving the repository.  Feel free to use the code as-is or for some
+inspiration, but right now, I don't have the time.  Maybe in another
+life/career/role!
+
 # network-static-analysis
 
 `nsa` is a static configuration analysis tool for ensuring network
